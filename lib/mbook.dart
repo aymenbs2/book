@@ -1,6 +1,22 @@
 library mbook;
 
-/// A Calculator.
+
+import 'book.dart';
+
 class MBook {
-  int addOne(int value) => value + 1;
+  void main() {
+    Test t = Test();
+    t.name = "hellow";
+    Book b = Book("dqsdqsqs");
+    b.write<Test>("key", t);
+    print("yes we do ir"+t.name);
+  }
+}
+
+@myReflectable
+class Test {
+  String name = "";
+  int id = 0;
+
+
 }
