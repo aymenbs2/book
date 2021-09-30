@@ -19,7 +19,7 @@ import '../instance_creator.dart';
     // Mirror the particular instance (rather than the class itself)
     InstanceMirror instanceMirror = MBookReflectable.reflect(object);
     Map dataMapped = {};
-    // Mirror the instance's class (type) to get the declarations
+    // Mirror the instance's class (type) to get the declarations varibales
     for (var declaration in instanceMirror.type.declarations.values) {
       // If declaration is a type of variable, map variable name and value
       if (declaration is VariableMirror) {

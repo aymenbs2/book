@@ -6,9 +6,10 @@ import 'book.dart';
 class MBook {
   void main() async{
     Test t = Test();
-    t.name = "hellow";
-    Book b = Book("dqsdqsqs");
-    print((await b.write<Test>("key", t)).toString());
+    t.name = "aymen";
+    Book b = Book("first_book");
+   //print((await b.write<Test>("first_paper", t)).toString());
+    print((await b.write<int>("second_paper", 5)).toString());
 
   }
 }

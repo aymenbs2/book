@@ -22,10 +22,9 @@ class Book {
 
   Future<T> write<T>(key, T value) async {
     if (value == null) {
-      throw MBookDbException("Mbook doesn't support writing null root values");
+      throw MBookDbException("Mbook doesn't support null root values");
     } else {
-      print(MapHelper.mapToObject<T>(MapHelper.objectToMap(value)));
-     return _dbStorage.insert(key, value);
+     return  _dbStorage.insert(name,key, value);
     }
   }
 
