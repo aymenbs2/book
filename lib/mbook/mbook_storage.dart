@@ -7,19 +7,30 @@ import '../helpers/map_helper.dart';
 import '../helpers/path_helper.dart';
 
 class MbookStorage {
-  MbookStorage();
 
   Future<T> insert<T>(book, key, value) async {
     await File(await PathHelper.temporaryDirectory + "/$book/$key.txt")
         .create(recursive: true);
     File f = File(await PathHelper.temporaryDirectory + "/$book/$key.txt");
-    print("isisisis "+isSimpleType(value).toString());
-    if (isSimpleType(value)) {
+    if (_isSimpleType(value)) {
       f.writeAsString(value.toString());
+      return value;
+    }
+    if (_isIterable(value)) {
+      _saveList(value, f);
       return value;
     }
     f.writeAsString(jsonEncode(MapHelper.objectToMap(value)));
     return value;
+  }
+
+  void _saveList(value, File f) {
+    var savableList = [];
+    for (var elem in value) {
+      savableList
+          .add(!_isSimpleType(elem) ? MapHelper.objectToMap(elem) : elem);
+    }
+    f.writeAsString(jsonEncode(savableList));
   }
 
   // T select<T>(String key, defaultValue) {
@@ -30,10 +41,14 @@ class MbookStorage {
 
   delete(String key) {}
 
-  bool isSimpleType(value) {
+  bool _isSimpleType(value) {
     return value.runtimeType.toString().toLowerCase() == "string" ||
         value.runtimeType.toString().toLowerCase() == "int" ||
         value.runtimeType.toString().toLowerCase() == "double" ||
         value.runtimeType.toString().toLowerCase() == "bool";
+  }
+
+  bool _isIterable(value) {
+    return value is Iterable;
   }
 }

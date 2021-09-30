@@ -3,8 +3,8 @@
 // @dart = 2.12
 
 import 'dart:core';
+import 'mbook_test.dart' as prefix1;
 import 'package:mbook/mbook/book.dart' as prefix0;
-import 'package:mbook/mbook/mbook.dart' as prefix1;
 
 // ignore_for_file: prefer_adjacent_string_concatenation
 // ignore_for_file: prefer_collection_literals
@@ -23,7 +23,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'Test',
-            r'mbook.Test',
+            r'.Test',
             7,
             0,
             const prefix0.MbookReflectable(),
