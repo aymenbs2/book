@@ -1,19 +1,29 @@
+import 'dart:convert';
+import 'dart:io';
+
 import 'package:path_provider/path_provider.dart';
+
+import 'helpers/map_helper.dart';
 
 class MbookStorage {
   MbookStorage();
 
   Future<String> get _localPath async {
-    final directory = await getApplicationDocumentsDirectory();
+    final directory = await getTemporaryDirectory();
     return directory.path;
   }
 
-  void insert<T>(key, value) {
-    dynamic d = value;
-    print(d);
+  Future<T> insert<T>(key, value) async {
+    File f = File(await _localPath+"/$key.txt");
+    f.writeAsString(jsonEncode(MapHelper.objectToMap(value)));
+    return MapHelper.mapToObject<T>(MapHelper.objectToMap(value));
   }
 
-  select<T>(String key, defaultValue) {}
+  // T select<T>(String key, defaultValue) {
+  //
+  //
+  //   return MapHelper.mapToObject<T>();
+  // }
 
   delete(String key) {}
 }
