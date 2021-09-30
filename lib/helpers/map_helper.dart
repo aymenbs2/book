@@ -1,13 +1,13 @@
 import 'package:reflectable/mirrors.dart';
 
-import '../book.dart';
-import '../instance_creator.dart';
+import '../mbook/book.dart';
+import 'instance_creator.dart';
 
  class MapHelper {
 
   static T mapToObject<T>(Map map) {
     T instance = InstanceCreator.createInstance(T);
-    var instanceMirror = MBookReflectable.reflect(instance!);
+    var instanceMirror = savable.reflect(instance!);
     map.keys.toList().asMap().forEach((index, value) {
       _setVariablesValues(instanceMirror, value, map, index);
     });
@@ -17,7 +17,7 @@ import '../instance_creator.dart';
 
   static Map objectToMap(Object object) {
     // Mirror the particular instance (rather than the class itself)
-    InstanceMirror instanceMirror = MBookReflectable.reflect(object);
+    InstanceMirror instanceMirror = savable.reflect(object);
     Map dataMapped = {};
     // Mirror the instance's class (type) to get the declarations varibales
     for (var declaration in instanceMirror.type.declarations.values) {
