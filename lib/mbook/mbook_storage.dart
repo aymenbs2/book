@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:path_provider/path_provider.dart';
 
-import 'helpers/map_helper.dart';
-import 'helpers/path_helper.dart';
+import '../helpers/map_helper.dart';
+import '../helpers/path_helper.dart';
 
 class MbookStorage {
   MbookStorage();
@@ -13,8 +13,9 @@ class MbookStorage {
     await File(await PathHelper.temporaryDirectory + "/$book/$key.txt")
         .create(recursive: true);
     File f = File(await PathHelper.temporaryDirectory + "/$book/$key.txt");
+    print("isisisis "+isSimpleType(value).toString());
     if (isSimpleType(value)) {
-      f.writeAsString(value);
+      f.writeAsString(value.toString());
       return value;
     }
     f.writeAsString(jsonEncode(MapHelper.objectToMap(value)));
