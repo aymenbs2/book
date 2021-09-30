@@ -11,6 +11,9 @@ dependencies:
   flutter:
     sdk: flutter
   path_provider: ^2.0.5
+  reflectable: any
+  build_runner: any
+  built_value_generator: any
 
 dev_dependencies:
   flutter_test:
