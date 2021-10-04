@@ -4,7 +4,7 @@ import 'package:mbook/helpers/data_type_heper.dart';
 import '../helpers/map_helper.dart';
 import '../helpers/path_helper.dart';
 
-class MbookStorage {
+class BookStorage {
   Future<T> insert<T>(book, key, value) async {
     await File(await PathHelper.temporaryDirectory + "/$book/$key.txt")
         .create(recursive: true);
@@ -31,11 +31,19 @@ class MbookStorage {
     f.writeAsString(jsonEncode(savableList));
   }
 
-  // T select<T>(String key, defaultValue) {
-  //
-  //
-  //   return MapHelper.mapToObject<T>();
-  // }
+  Future<T> select<T>(String book,String key, defaultValue) async {
+    var path = (await PathHelper.temporaryDirectory )+ "/$book/$key.txt";
+    var file = File(path);
+    var content = jsonDecode(await file.readAsString());
+    if(DataTypeHelper.isIterable(content)){
+      for(var elem in content){
+        if(DataTypeHelper.isSimpleType(elem)){
+
+        }
+      }
+    }
+    return Future.value(defaultValue);
+  }
 
   delete(String key) {}
 }

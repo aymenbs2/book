@@ -2,7 +2,7 @@ import 'package:reflectable/reflectable.dart';
 
 import '../mbook/book.dart';
 
-const mbookReflectable = MbookReflectable();
+const mbookReflectable = BookReflectable();
 
 class InstanceCreator {
   static createInstance(Type type,
@@ -15,6 +15,5 @@ class InstanceCreator {
     } else {
       throw ArgumentError("Cannot create the instance of the type '$type'.");
     }
-    ;
   }
 }

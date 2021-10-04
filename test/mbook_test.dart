@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mbook/mbook/book.dart';
 
-import 'package:mbook/mbook/mbook.dart';
+import 'package:mbook/mbook/Book.dart';
 
 import 'mbook_test.reflectable.dart';
 
@@ -11,13 +11,20 @@ void main() {
   test('save list of savable objects or simple objects', () async {
     Test t = Test();
     t.name = "secondTest";
-    Book b =MBook.book("myBook2");
+    Book b =Book.book("myBook2");
     var list = [];
     list.add(t);
     list.add(t);
     list.add(t);
     list.add(t);
     await b.write<List>("lsit_paper", list);
+  });
+
+  test('read data from a book', () async {
+    Test t = Test();
+    t.name = "secondTest";
+    Book b =Book.book("myBook2");
+    await b.read<List>("lsit_paper",defaultValue:null);
   });
 }
 @savable

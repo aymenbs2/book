@@ -2,7 +2,7 @@ library mbook;
 
 import 'book.dart';
 
-class MBook {
+class Book {
 
   static Book book(name){
     return Book(name);
