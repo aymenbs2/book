@@ -16,7 +16,12 @@ know whether this package might be useful for them.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+Mbook 's aim is to provide a simple yet fast object storage option for Android/Ios.
+ It allows to use dart classes as is: without attributes annotations,
+ factory methods, mandatory class extensions etc.
+  Moreover adding or removing fields to data classes is no longer a pain – all data structure changes are handled automatically.
+
+
 
 ## Getting started
 

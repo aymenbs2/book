@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:mbook/helpers/data_type_heper.dart';
+import 'package:book/helpers/data_type_heper.dart';
+
 import '../helpers/map_helper.dart';
 import '../helpers/path_helper.dart';
 
@@ -37,10 +38,12 @@ class BookStorage {
     var content = jsonDecode(await file.readAsString());
     if(DataTypeHelper.isIterable(content)){
       for(var elem in content){
-        if(DataTypeHelper.isSimpleType(elem)){
+        if(!DataTypeHelper.isSimpleType(elem)){
 
         }
       }
+    }else if(content!=null && content !=""){
+      return Future.value(MapHelper.mapToObject<T>(content));
     }
     return Future.value(defaultValue);
   }

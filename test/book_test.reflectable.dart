@@ -3,8 +3,8 @@
 // @dart = 2.12
 
 import 'dart:core';
-import 'mbook_test.dart' as prefix1;
-import 'package:mbook/mbook/book.dart' as prefix0;
+import 'book_test.dart' as prefix1;
+import 'package:book/book/book_manager.dart' as prefix0;
 
 // ignore_for_file: prefer_adjacent_string_concatenation
 // ignore_for_file: prefer_collection_literals
@@ -61,8 +61,8 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null)
       ],
       <m.DeclarationMirror>[
-        r.VariableMirrorImpl(r'name', 32773, 0,
-            const prefix0.BookReflectable(), -1, -1, -1, null, const []),
+        r.VariableMirrorImpl(r'name', 32773, 0, const prefix0.BookReflectable(),
+            -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'id', 32773, 0, const prefix0.BookReflectable(),
             -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'isHuman', 32773, 0,
