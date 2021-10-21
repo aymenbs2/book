@@ -3,8 +3,8 @@
 // @dart = 2.12
 
 import 'dart:core';
-import 'mbook_test.dart' as prefix1;
-import 'package:mbook/mbook/book.dart' as prefix0;
+import 'book_test.dart' as prefix1;
+import 'package:book/book/book_manager.dart' as prefix0;
 
 // ignore_for_file: prefer_adjacent_string_concatenation
 // ignore_for_file: prefer_collection_literals
@@ -19,14 +19,14 @@ import 'package:reflectable/src/reflectable_builder_based.dart' as r;
 import 'package:reflectable/reflectable.dart' as r show Reflectable;
 
 final _data = <r.Reflectable, r.ReflectorData>{
-  const prefix0.MbookReflectable(): r.ReflectorData(
+  const prefix0.BookReflectable(): r.ReflectorData(
       <m.TypeMirror>[
         r.NonGenericClassMirrorImpl(
             r'Test',
             r'.Test',
             7,
             0,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             const <int>[0, 1, 2, 3, 4, 5, 6, 7, 22],
             const <int>[
               23,
@@ -61,19 +61,19 @@ final _data = <r.Reflectable, r.ReflectorData>{
             null)
       ],
       <m.DeclarationMirror>[
-        r.VariableMirrorImpl(r'name', 32773, 0,
-            const prefix0.MbookReflectable(), -1, -1, -1, null, const []),
-        r.VariableMirrorImpl(r'id', 32773, 0, const prefix0.MbookReflectable(),
+        r.VariableMirrorImpl(r'name', 32773, 0, const prefix0.BookReflectable(),
+            -1, -1, -1, null, const []),
+        r.VariableMirrorImpl(r'id', 32773, 0, const prefix0.BookReflectable(),
             -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'isHuman', 32773, 0,
-            const prefix0.MbookReflectable(), -1, -1, -1, null, const []),
+            const prefix0.BookReflectable(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'isAnimal', 32773, 0,
-            const prefix0.MbookReflectable(), -1, -1, -1, null, const []),
+            const prefix0.BookReflectable(), -1, -1, -1, null, const []),
         r.VariableMirrorImpl(r'weight', 32773, 0,
-            const prefix0.MbookReflectable(), -1, -1, -1, null, const []),
-        r.VariableMirrorImpl(r'nb', 32773, 0, const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(), -1, -1, -1, null, const []),
+        r.VariableMirrorImpl(r'nb', 32773, 0, const prefix0.BookReflectable(),
             -1, -1, -1, null, const []),
-        r.VariableMirrorImpl(r'nb2', 32773, 0, const prefix0.MbookReflectable(),
+        r.VariableMirrorImpl(r'nb2', 32773, 0, const prefix0.BookReflectable(),
             -1, -1, -1, null, const []),
         r.MethodMirrorImpl(
             r'toString',
@@ -84,39 +84,39 @@ final _data = <r.Reflectable, r.ReflectorData>{
             -1,
             null,
             const <int>[],
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             const <Object>[override]),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 0, 8),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 0, 9),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 1, 10),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 1, 11),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 2, 12),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 2, 13),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 3, 14),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 3, 15),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 4, 16),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 4, 17),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 5, 18),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 5, 19),
-        r.ImplicitGetterMirrorImpl(const prefix0.MbookReflectable(), 6, 20),
-        r.ImplicitSetterMirrorImpl(const prefix0.MbookReflectable(), 6, 21),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 0, 8),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 0, 9),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 1, 10),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 1, 11),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 2, 12),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 2, 13),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 3, 14),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 3, 15),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 4, 16),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 4, 17),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 5, 18),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 5, 19),
+        r.ImplicitGetterMirrorImpl(const prefix0.BookReflectable(), 6, 20),
+        r.ImplicitSetterMirrorImpl(const prefix0.BookReflectable(), 6, 21),
         r.MethodMirrorImpl(r'', 0, 0, -1, -1, -1, null, const <int>[],
-            const prefix0.MbookReflectable(), const []),
+            const prefix0.BookReflectable(), const []),
         r.MethodMirrorImpl(r'==', 131074, -1, -1, -1, -1, null, const <int>[7],
-            const prefix0.MbookReflectable(), const []),
+            const prefix0.BookReflectable(), const []),
         r.MethodMirrorImpl(r'noSuchMethod', 65538, -1, -1, -1, -1, null,
-            const <int>[8], const prefix0.MbookReflectable(), const []),
+            const <int>[8], const prefix0.BookReflectable(), const []),
         r.MethodMirrorImpl(r'hashCode', 131075, -1, -1, -1, -1, null,
-            const <int>[], const prefix0.MbookReflectable(), const []),
+            const <int>[], const prefix0.BookReflectable(), const []),
         r.MethodMirrorImpl(r'runtimeType', 131075, -1, -1, -1, -1, null,
-            const <int>[], const prefix0.MbookReflectable(), const [])
+            const <int>[], const prefix0.BookReflectable(), const [])
       ],
       <m.ParameterMirror>[
         r.ParameterMirrorImpl(
             r'_name',
             32870,
             9,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -128,7 +128,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_id',
             32870,
             11,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -140,7 +140,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_isHuman',
             32870,
             13,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -152,7 +152,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_isAnimal',
             32870,
             15,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -164,7 +164,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_weight',
             32870,
             17,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -176,7 +176,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_nb',
             32870,
             19,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -188,7 +188,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'_nb2',
             32870,
             21,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -200,7 +200,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'other',
             32774,
             23,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,
@@ -212,7 +212,7 @@ final _data = <r.Reflectable, r.ReflectorData>{
             r'invocation',
             32774,
             24,
-            const prefix0.MbookReflectable(),
+            const prefix0.BookReflectable(),
             -1,
             -1,
             -1,

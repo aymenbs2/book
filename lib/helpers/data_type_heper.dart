@@ -1,5 +1,4 @@
 class DataTypeHelper{
-
   static bool isSimpleType(value) {
     return value.runtimeType.toString().toLowerCase() == "string" ||
         value.runtimeType.toString().toLowerCase() == "int" ||
