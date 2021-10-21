@@ -61,6 +61,10 @@ import 'instance_creator.dart';
         instanceMirror.invokeSetter(
             value, num.tryParse(map.values.elementAt(index)));
         break;
+        case 'dynamic':
+        instanceMirror.invokeSetter(
+            value, num);
+        break;
     }
   }
 }
