@@ -1,20 +1,20 @@
+import 'package:book/book/book_manager.dart';
 import 'package:reflectable/reflectable.dart';
 
-import '../mbook/book.dart';
+import '../book/book.dart';
 
-const mbookReflectable = MbookReflectable();
+const bookReflectable = BookReflectable();
 
 class InstanceCreator {
   static createInstance(Type type,
       {List? arguments, Map<Symbol, dynamic>? namedArguments}) {
     arguments ??= const [];
     namedArguments ??= {};
-    var typeMirror = mbookReflectable.reflectType(type);
+    var typeMirror = bookReflectable.reflectType(type);
     if (typeMirror is ClassMirror) {
       return typeMirror.newInstance('', arguments, namedArguments);
     } else {
       throw ArgumentError("Cannot create the instance of the type '$type'.");
     }
-    ;
   }
 }

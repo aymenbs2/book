@@ -1,6 +1,8 @@
+import 'package:book/book/book_db_exception.dart';
+import 'package:book/book/book_manager.dart';
+import 'package:book/helpers/data_type_heper.dart';
 import 'package:reflectable/mirrors.dart';
 
-import '../mbook/book.dart';
 import 'instance_creator.dart';
 
  class MapHelper {
@@ -16,6 +18,10 @@ import 'instance_creator.dart';
   }
 
   static Map objectToMap(Object object) {
+
+    if(DataTypeHelper.isSimpleType(object)) {
+      throw BookDbException("Simple type connote be converted into map object");
+    }
     // Mirror the particular instance (rather than the class itself)
     InstanceMirror instanceMirror = savable.reflect(object);
     Map dataMapped = {};
@@ -54,6 +60,10 @@ import 'instance_creator.dart';
       case 'num':
         instanceMirror.invokeSetter(
             value, num.tryParse(map.values.elementAt(index)));
+        break;
+        case 'dynamic':
+        instanceMirror.invokeSetter(
+            value, num);
         break;
     }
   }
