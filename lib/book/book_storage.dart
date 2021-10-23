@@ -1,9 +1,6 @@
 import 'dart:convert';
 import 'dart:io';
-import 'package:book/book/book_db_exception.dart';
 import 'package:book/helpers/data_type_heper.dart';
-import 'package:flutter/material.dart';
-
 import '../helpers/map_helper.dart';
 import '../helpers/path_helper.dart';
 
@@ -34,29 +31,30 @@ class BookStorage {
     f.writeAsString(jsonEncode(savableList));
   }
 
-  Future<T> select<T>(String book, String key, defaultValue) async {
+  Future<T> select<T>(String book, String key,T defaultValue) async {
     var path = (await PathHelper.temporaryDirectory) + "/$book/$key.txt";
     var file = File(path);
     var content = jsonDecode(await file.readAsString());
+    print(content);
     if (!DataTypeHelper.isIterable(content) &&
         content != null &&
         content != "") {
       return DataTypeHelper.isSimpleType(content)
-          ? Future.value(content)
+          ? Future.value(content as T)
           : Future.value(MapHelper.mapToObject<T>(content));
     }
     return Future.value(defaultValue);
   }
 
-  Future<T> selectIterable<T, R>(String book, String key, defaultValue) async {
+  Future<T> selectIterable<T>(String book, String key, defaultValue) async {
     var path = (await PathHelper.temporaryDirectory) + "/$book/$key.txt";
     var file = File(path);
     var content = jsonDecode(await file.readAsString());
-     List<R> res= [];
+     List<T> res= [];
     if (DataTypeHelper.isIterable(content)) {
       for (var elem in content) {
         if (!DataTypeHelper.isSimpleType(elem)) {
-          res.add(MapHelper.mapToObject<R>(elem));
+          res.add(MapHelper.mapToObject<T>(elem));
         } else {
           res.add(elem);
         }
@@ -68,5 +66,8 @@ class BookStorage {
     return Future.value(defaultValue);
   }
 
-  delete(String key) {}
+  delete(String key) {
+
+
+  }
 }

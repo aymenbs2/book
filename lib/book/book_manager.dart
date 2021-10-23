@@ -26,11 +26,11 @@ class BookManager {
     }
   }
 
-  Future<T> read<T>(String key, {dynamic defaultValue}) async {
+  Future<T> read<T>(String key, {required T defaultValue}) async {
     return await _dbStorage.select<T>(name, key, defaultValue);
   }
 
-  Future<T> readIterable<T, R>(String key, {dynamic defaultValue}) async {
-    return await _dbStorage.selectIterable<T, R>(name, key, defaultValue);
+  Future<T> readIterable<T>(String key, {dynamic defaultValue}) async {
+    return await _dbStorage.selectIterable<T>(name, key, defaultValue);
   }
 }
