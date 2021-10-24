@@ -25,8 +25,8 @@ void main() {
     Test t = Test();
     t.name = "secondTest";
     BookManager b = Book.book("myBook2");
-    var res = await b.readIterable<List<Test>, Test>("lsit_paper",
-        defaultValue: null);
+    var res = await b.read<Test>("lsit_paper"
+        , defaultValue: Test());
     print("res is : ");
     print(res);
   });
