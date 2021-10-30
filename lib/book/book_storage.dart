@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:io';
 import 'package:book/helpers/data_type_heper.dart';
+import 'package:book/helpers/instance_creator.dart';
 import '../helpers/map_helper.dart';
 import '../helpers/path_helper.dart';
 
@@ -50,10 +51,10 @@ class BookStorage {
     var path = (await PathHelper.temporaryDirectory) + "/$book/$key.txt";
     var file = File(path);
     var content = jsonDecode(await file.readAsString());
-     List<T> res= [];
+     List res= [];
     if (DataTypeHelper.isIterable(content)) {
       for (var elem in content) {
-        if (!DataTypeHelper.isSimpleType(elem)) {
+        if (!DataTypeHelper.isSimpleType(elem) && bookReflectable.canReflect(elem)) {
           res.add(MapHelper.mapToObject<T>(elem));
         } else {
           res.add(elem);
