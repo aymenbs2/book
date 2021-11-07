@@ -1,6 +1,6 @@
 ## Technologies
 - Flutter
-
+- Dart
 ## 🤝 Contributing
 
 Contributions, issues and feature requests are welcome.<br />
@@ -9,7 +9,7 @@ Feel free to check [issues page] if you want to contribute.<br />
 
 ## Author
 
-👤 **Aymen ben salah**
+👤 **Aymen Ben Salah**
 
 - Twitter: [@AymenBenSalah](https://twitter.com/Aymenbe49803679)
 - Linkedin: [@AymenBenSalah](https://www.linkedin.com/in/aymen-ben-salah-b60b5a153/)
